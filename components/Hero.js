@@ -3,16 +3,18 @@ import {
   StyledBackground,
   StyledOccupation,
   StyledHero,
+  BlurredImage,
   Body,
 } from '../styles/Hero';
 import Name, { Occupation } from './Name';
 
-const Background = () => {
+const Background = ({ imgSrc, imgBase64 }) => {
   return (
     <StyledBackground>
+      <BlurredImage src={imgBase64} alt="" aria-hidden />
       <Image
         alt=""
-        src="/images/hero.jpg"
+        src={imgSrc}
         layout="fill"
         objectFit="cover"
         quality={100}
@@ -22,10 +24,10 @@ const Background = () => {
   );
 };
 
-const Hero = () => {
+const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
   return (
     <StyledHero>
-      <Background />
+      <Background imgSrc={imgSrc} imgBase64={imgBase64} />
       <Body>
         <StyledOccupation as={Occupation} />
         <Name mobile={{ size: 36 }} />
