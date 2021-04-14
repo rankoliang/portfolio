@@ -7,7 +7,6 @@ export const StyledName = styled.div`
   font-weight: bold;
   font-size: 14px;
   text-align: center;
-  margin: 1px;
 
   text-transform: uppercase;
 `;
