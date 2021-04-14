@@ -4,7 +4,7 @@ import { GRAY_2 } from './colors';
 export const StyledHeader = styled.header`
   display: flex;
   width: 100%;
-  position: absolute;
+  position: fixed;
   background: ${GRAY_2};
   justify-content: space-between;
   align-items: center;
@@ -14,6 +14,10 @@ export const StyledHeader = styled.header`
 
   & > * {
     flex: 1;
+  }
+
+  & + * {
+    padding-top: 25px;
   }
 `;
 
@@ -26,6 +30,12 @@ export const NavbarStart = styled.div`
 export const NavbarEnd = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+`;
+
+export const NavbarCenter = styled.div`
+  display: flex;
+  justify-content: center;
   align-items: center;
 `;
 

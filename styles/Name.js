@@ -5,9 +5,8 @@ export const StyledName = styled.div`
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: ${({ mobile: { size } }) => size}px;
   text-align: center;
-
   text-transform: uppercase;
 `;
 

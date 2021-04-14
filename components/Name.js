@@ -1,11 +1,13 @@
 import { StyledName, LastName } from '../styles/Name';
 
-const Name = () => {
+export const Occupation = (props) => {
+  return <div {...props}>Full-Stack Engineer</div>;
+};
+
+const Name = (props) => {
   return (
-    <StyledName>
-      <a href="/">
-        Ranko <LastName>Liang</LastName>
-      </a>
+    <StyledName {...props}>
+      Ranko <LastName>Liang</LastName>
     </StyledName>
   );
 };
