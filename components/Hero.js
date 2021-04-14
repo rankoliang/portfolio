@@ -30,7 +30,7 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
       <Background imgSrc={imgSrc} imgBase64={imgBase64} />
       <Body>
         <StyledOccupation as={Occupation} />
-        <Name mobile={{ size: 36 }} />
+        <Name mobile={{ size: '3em' }} />
       </Body>
     </StyledHero>
   );

@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 25px;
+  height: 2em;
   padding: 0 0.1em;
 
   & > * {
@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
   }
 
   & + * {
-    padding-top: 25px;
+    padding-top: 2em;
   }
 `;
 
@@ -40,5 +40,5 @@ export const NavbarCenter = styled.div`
 `;
 
 export const Logo = styled.svg`
-  font-size: 20px;
+  font-size: 2em;
 `;

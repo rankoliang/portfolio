@@ -11,12 +11,12 @@ export const StyledHero = styled.div`
 
 export const StyledOccupation = styled.div`
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 1.25em;
 `;
 
 export const Body = styled.div`
   background: rgba(51, 51, 51, 0.5);
-  padding: 5px;
+  padding: 0.4em;
   display: flex;
   flex-direction: column;
   align-items: center;
