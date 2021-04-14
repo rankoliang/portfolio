@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
+:root {
+  --primary-400: #56ccf2;
+  --primary-500: #2d9cdb;
+
+  --navbar-bg: #4f4f4f;
+}
+
 html,
 body {
   padding: 0;

@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { GRAY_2 } from './colors';
 
 export const StyledHeader = styled.header`
   display: flex;
   width: 100%;
   position: fixed;
-  background: ${GRAY_2};
+  background: var(--navbar-bg);
   justify-content: space-between;
   align-items: center;
   color: white;

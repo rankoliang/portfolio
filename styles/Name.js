@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BLUE_3 } from './colors';
 
 export const StyledName = styled.div`
   font-family: Lato;
@@ -11,5 +10,5 @@ export const StyledName = styled.div`
 `;
 
 export const LastName = styled.span`
-  color: ${BLUE_3};
+  color: var(--primary-400);
 `;
