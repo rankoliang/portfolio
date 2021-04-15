@@ -7,6 +7,8 @@
   --primary-400: #56ccf2;
   --primary-500: #2d9cdb;
   --navbar-bg: var(--gray-700);
+
+  --header-height: 2em;
 }
 
 * {

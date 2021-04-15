@@ -6,7 +6,7 @@ export const StyledHero = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  height: max(400px, 50vh);
+  height: calc(100vh - var(--header-height));
 `;
 
 export const StyledOccupation = styled.div`

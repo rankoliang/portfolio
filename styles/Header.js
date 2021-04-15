@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 2em;
+  height: var(--header-height);
   padding: 0 0.25em;
   z-index: 1;
 
@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
   }
 
   & + * {
-    padding-top: 2em;
+    padding-top: var(--header-height);
   }
 `;
 
