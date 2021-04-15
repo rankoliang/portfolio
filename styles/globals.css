@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
 :root {
+  --gray-300: #bdbdbd;
+  --gray-700: #4f4f4f;
+
   --primary-400: #56ccf2;
   --primary-500: #2d9cdb;
-  --navbar-bg: #4f4f4f;
+  --navbar-bg: var(--gray-700);
 }
 
 * {
   margin: 0;
   padding: 0;
+  line-height: 130%;
 }
 
 html,
@@ -16,7 +20,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: clamp(16px, 16px + 1.5vw, 40px);
+  font-weight: 300;
+  font-size: clamp(16px, 12px + 0.75vw, 40px);
+}
+
+p {
+  text-align: justify;
 }
 
 h1,

@@ -38,7 +38,7 @@ export const Titles = styled.header`
 export const StyledBackground = styled.div`
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   z-index: -1;
 `;

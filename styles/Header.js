@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
   color: white;
   height: 2em;
   padding: 0 0.25em;
+  z-index: 1;
 
   & > * {
     flex: 1;
