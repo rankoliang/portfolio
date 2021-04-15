@@ -12,9 +12,9 @@ const StyledButton = styled.button`
   font-family: Roboto, sans-serif;
   font-weight: 500;
   box-shadow: inset 0 0 0 0 white;
-  transition-property: box-shadow, color;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
+  transition-property: box-shadow, color, transform;
+  transition-duration: 0.4s, 0.4s, 0.1s;
+  transition-timing-function: ease-out, ease-out, ease-out;
 
   & > *:not(:last-child) {
     margin-right: 0.25em;
@@ -24,6 +24,10 @@ const StyledButton = styled.button`
   &:hover {
     box-shadow: inset 0 0 0 2em white;
     color: black;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
