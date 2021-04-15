@@ -33,6 +33,7 @@ export const NavbarEnd = styled.div`
 `;
 
 export const NavbarCenter = styled.div`
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;

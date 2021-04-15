@@ -3,7 +3,6 @@
 :root {
   --primary-400: #56ccf2;
   --primary-500: #2d9cdb;
-
   --navbar-bg: #4f4f4f;
 }
 
@@ -12,7 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;
+  font-size: clamp(12px, 8px + 1vw, 32px);
 }
 
 h1,
@@ -32,18 +31,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media screen and (min-width: 768px) {
-  html,
-  body {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  html,
-  body {
-    font-size: 24px;
-  }
 }
