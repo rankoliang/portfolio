@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   color: white;
   height: 2em;
-  padding: 0 0.1em;
+  padding: 0 0.25em;
 
   & > * {
     flex: 1;
@@ -37,8 +37,4 @@ export const NavbarCenter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Logo = styled.svg`
-  font-size: 2rem;
 `;

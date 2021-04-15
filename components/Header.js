@@ -3,9 +3,8 @@ import {
   NavbarStart,
   NavbarEnd,
   NavbarCenter,
-  Logo,
 } from '../styles/Header';
-import { DiGithubBadge } from 'react-icons/di';
+import GithubIcon from './icons/GithubIcon';
 import Name from './Name';
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
       </NavbarCenter>
       <NavbarEnd>
         <a href="https://github.com/rankoliang/">
-          <Logo as={DiGithubBadge} />
+          <GithubIcon size="1.5rem" />
         </a>
       </NavbarEnd>
     </StyledHeader>
