@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   line-height: 130%;
+  scroll-margin-top: var(--header-height);
 }
 
 html,
@@ -24,6 +25,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: clamp(16px, 12px + 0.75vw, 40px);
+}
+
+html,
+body,
+body > *:first-child,
+main {
+  height: 100%;
 }
 
 p {

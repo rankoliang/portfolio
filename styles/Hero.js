@@ -6,7 +6,7 @@ export const StyledHero = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  height: calc(100vh - var(--header-height));
+  height: 100%;
 `;
 
 export const StyledOccupation = styled.div`
@@ -55,4 +55,29 @@ export const BlurredImage = styled.img`
   object-position: center;
   filter: blur(2rem);
   transform: scale(1.2);
+`;
+
+export const ScrollDown = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 1em;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transition: transform 0.25s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+
+  @media screen and (max-height: 300px) {
+    & {
+      visibility: hidden;
+    }
+  }
 `;
