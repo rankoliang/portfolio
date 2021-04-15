@@ -11,7 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: clamp(16px, 8px + 1vw, 32px);
+  font-size: clamp(16px, 16px + 1.5vw, 40px);
 }
 
 h1,
