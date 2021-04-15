@@ -16,7 +16,7 @@ export const StyledOccupation = styled.div`
   top: 0.25em;
 `;
 
-export const Body = styled.div`
+export const Body = styled.section`
   background: rgba(51, 51, 51, 0.5);
   padding: 1.25em;
   display: flex;
@@ -29,7 +29,7 @@ export const Body = styled.div`
   }
 `;
 
-export const Titles = styled.div`
+export const Titles = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
