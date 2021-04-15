@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import breakpoints from './breakpoints';
 
 export const StyledName = styled.div`
+  color: white;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;

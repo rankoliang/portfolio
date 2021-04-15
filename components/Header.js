@@ -6,15 +6,16 @@ import {
 } from '../styles/Header';
 import GithubIcon from './icons/GithubIcon';
 import Name from './Name';
+import Brand from './Brand';
 
 const Header = () => {
   return (
     <StyledHeader>
       <NavbarStart />
       <NavbarCenter>
-        <a href="/">
+        <Brand>
           <Name mobile={{ size: '1.25rem' }} />
-        </a>
+        </Brand>
       </NavbarCenter>
       <NavbarEnd>
         <a href="https://github.com/rankoliang/">
