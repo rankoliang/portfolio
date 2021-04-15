@@ -39,5 +39,5 @@ export const NavbarCenter = styled.div`
 `;
 
 export const Logo = styled.svg`
-  font-size: 2em;
+  font-size: 2rem;
 `;

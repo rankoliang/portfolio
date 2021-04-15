@@ -14,7 +14,7 @@ const Header = () => {
       <NavbarStart />
       <NavbarCenter>
         <a href="/">
-          <Name mobile={{ size: '1.25em' }} />
+          <Name mobile={{ size: '1.25rem' }} />
         </a>
       </NavbarCenter>
       <NavbarEnd>
