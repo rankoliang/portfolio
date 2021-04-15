@@ -6,19 +6,19 @@ export const StyledHero = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  height: 50vh;
+  height: max(400px, 50vh);
 `;
 
 export const StyledOccupation = styled.div`
   text-transform: uppercase;
   font-size: 1.25rem;
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 0.25em;
 `;
 
 export const Body = styled.div`
   background: rgba(51, 51, 51, 0.5);
-  padding: 0.75em;
+  padding: 1.25em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,11 +30,9 @@ export const Body = styled.div`
 `;
 
 export const Titles = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 0.75em;
 `;
 
 export const StyledBackground = styled.div`
