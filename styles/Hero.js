@@ -12,6 +12,8 @@ export const StyledHero = styled.div`
 export const StyledOccupation = styled.div`
   text-transform: uppercase;
   font-size: 1.25rem;
+  position: absolute;
+  top: 0;
 `;
 
 export const Body = styled.div`
@@ -21,6 +23,18 @@ export const Body = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  & > *:not(:last-child) {
+    margin-bottom: 0.25em;
+  }
+`;
+
+export const Titles = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.75em;
 `;
 
 export const StyledBackground = styled.div`
