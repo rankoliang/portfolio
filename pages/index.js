@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import getPlaceholder from '../utils/getPlaceholder';
 import Container from '../styles/Container';
 import About from '../components/About';
+import Projects from '../components/Projects';
 
 export const getStaticProps = async () => {
   const hero = await getPlaceholder('/images/hero.jpg');
@@ -19,6 +20,7 @@ export default function Home({ hero }) {
       <Hero hero={hero} />
       <Container marginY="0.75em">
         <About />
+        <Projects />
       </Container>
     </>
   );
