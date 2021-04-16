@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const StyledHero = styled.div`
   display: flex;
@@ -57,6 +57,17 @@ export const BlurredImage = styled.img`
   transform: scale(1.2);
 `;
 
+const hint = keyframes`
+  0%, 80%, 90% {
+    transform: inherit;
+  }
+
+  85%, 95% {
+    transform: translateY(0.5em);
+  }
+
+`;
+
 export const ScrollDown = styled.button`
   background: none;
   border: none;
@@ -68,6 +79,12 @@ export const ScrollDown = styled.button`
   right: 0;
   transition: transform 0.25s;
   -webkit-tap-highlight-color: transparent;
+
+  & > svg {
+    animation-duration: 10s;
+    animation-name: ${hint};
+    animation-iteration-count: infinite;
+  }
 
   &:hover,
   &:focus {

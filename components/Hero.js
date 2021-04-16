@@ -31,6 +31,7 @@ const Background = ({ imgSrc, imgBase64 }) => {
 
 const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
   const heroRef = useRef(null);
+  const scrollRef = useRef(null);
 
   const scrollToNext = () => {
     const hero = heroRef?.current;
@@ -40,6 +41,8 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
     sibling?.scrollIntoView({
       behavior: 'smooth',
     });
+
+    scrollRef.current?.blur();
   };
 
   return (
@@ -56,8 +59,8 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
         </Titles>
         <GithubLink />
       </Body>
-      <ScrollDown onClick={scrollToNext}>
-        <IoIosArrowDown size="2.5em" color="rgba(255, 255, 255, 0.85)" />
+      <ScrollDown onClick={scrollToNext} ref={scrollRef}>
+        <IoIosArrowDown size="2.5rem" color="rgba(255, 255, 255, 0.85)" />
       </ScrollDown>
     </StyledHero>
   );

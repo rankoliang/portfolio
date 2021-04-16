@@ -4,7 +4,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   background: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding: 0.1em 0.5em;
   color: white;
   border: 0.1em solid white;
@@ -27,7 +27,7 @@ const StyledButton = styled.button`
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: translateY(0.1em);
   }
 `;
 
