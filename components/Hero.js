@@ -5,13 +5,12 @@ import {
   StyledOccupation,
   StyledHero,
   BlurredImage,
-  ScrollDown,
   Titles,
   Body,
 } from '../styles/Hero';
 import Name, { Occupation } from './Name';
 import GithubLink from './buttons/GithubLink';
-import { IoIosArrowDown } from 'react-icons/io';
+import ScrollDown from '../components/ScrollDown';
 
 const Background = ({ imgSrc, imgBase64 }) => {
   return (
@@ -64,11 +63,7 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
         size={10}
         hoverScale={5}
         ref={scrollRef}
-      >
-        <div>
-          <IoIosArrowDown color="rgba(255, 255, 255, 0.85)" />
-        </div>
-      </ScrollDown>
+      />
     </StyledHero>
   );
 };
