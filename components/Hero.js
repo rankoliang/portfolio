@@ -60,8 +60,8 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
       </Body>
       <ScrollDown
         onClick={scrollToNext}
-        size={10}
-        hoverScale={5}
+        size={4}
+        hoverScale={1.5}
         ref={scrollRef}
       />
     </StyledHero>
