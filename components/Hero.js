@@ -56,7 +56,7 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
             tablet={{ size: '3.5rem' }}
           />
         </Titles>
-        <GithubLink />
+        <GithubLink color="white" outlined />
       </Body>
       <ScrollDown
         onClick={scrollToNext}
