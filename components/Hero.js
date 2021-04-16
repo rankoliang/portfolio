@@ -63,6 +63,7 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
         size={4}
         hoverScale={1.5}
         ref={scrollRef}
+        aria-hidden
       />
     </StyledHero>
   );

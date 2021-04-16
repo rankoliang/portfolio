@@ -18,7 +18,7 @@ const Header = () => {
         </Brand>
       </NavbarCenter>
       <NavbarEnd>
-        <a href="https://github.com/rankoliang/">
+        <a href="https://github.com/rankoliang/" aria-label="Github Profile">
           <GithubIcon size="1.25rem" />
         </a>
       </NavbarEnd>
