@@ -59,8 +59,15 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
         </Titles>
         <GithubLink />
       </Body>
-      <ScrollDown onClick={scrollToNext} ref={scrollRef}>
-        <IoIosArrowDown size="2.5rem" color="rgba(255, 255, 255, 0.85)" />
+      <ScrollDown
+        onClick={scrollToNext}
+        size={10}
+        hoverScale={5}
+        ref={scrollRef}
+      >
+        <div>
+          <IoIosArrowDown color="rgba(255, 255, 255, 0.85)" />
+        </div>
       </ScrollDown>
     </StyledHero>
   );

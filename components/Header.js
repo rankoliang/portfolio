@@ -19,7 +19,7 @@ const Header = () => {
       </NavbarCenter>
       <NavbarEnd>
         <a href="https://github.com/rankoliang/">
-          <GithubIcon size="1.5rem" />
+          <GithubIcon size="1.25rem" />
         </a>
       </NavbarEnd>
     </StyledHeader>

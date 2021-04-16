@@ -63,7 +63,7 @@ const hint = keyframes`
   }
 
   85%, 95% {
-    transform: translateY(0.5em);
+    transform: translateY(1rem);
   }
 
 `;
@@ -73,23 +73,43 @@ export const ScrollDown = styled.button`
   border: none;
   outline: none;
   position: absolute;
-  bottom: 1em;
+  bottom: 1rem;
   margin: 0 auto;
   left: 0;
   right: 0;
-  transition: transform 0.25s;
+  font-size: ${({ size, hoverScale }) => size * hoverScale}rem;
   -webkit-tap-highlight-color: transparent;
 
-  & > svg {
+  &,
+  & > div {
+    overflow: visible;
+    height: ${({ size }) => size}rem;
+    width: ${({ size }) => size}rem;
+  }
+
+  & > div {
     animation-duration: 10s;
     animation-name: ${hint};
     animation-iteration-count: infinite;
   }
 
-  &:hover,
-  &:focus {
+  & > div > svg {
+    transition: transform 0.25s;
+    transform: translate(
+        calc(-50% + ${({ size }) => size / 2}rem),
+        calc(-50% + ${({ size }) => size / 2}rem)
+      )
+      scale(${({ hoverScale }) => (1 / hoverScale).toFixed(4)});
+  }
+
+  &:hover svg,
+  &:focus svg {
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1)
+      translate(
+        calc(-50% + ${({ size }) => size / 2}rem),
+        calc(-50% + ${({ size }) => size / 2}rem)
+      );
   }
 
   @media screen and (max-height: 300px) {
@@ -98,3 +118,8 @@ export const ScrollDown = styled.button`
     }
   }
 `;
+
+ScrollDown.defaultProps = {
+  hoverScale: 1.5,
+  size: 1,
+};
