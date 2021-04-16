@@ -49,11 +49,12 @@ const outlinedStyles = ({ outlined }) => {
 };
 
 const StyledButton = styled.button`
+  border: 0;
   display: flex;
   align-items: center;
   background: none;
   font-size: 1.25rem;
-  padding: 0.2em 0.5em;
+  padding: 0.15em 0.5em;
   border-radius: 0.2em;
   font-family: Roboto, sans-serif;
   font-weight: 500;
@@ -61,6 +62,14 @@ const StyledButton = styled.button`
   transition-duration: 0.4s, 0.4s, 0.1s;
   transition-timing-function: ease-out, ease-out, ease-out;
   ${outlinedStyles}
+
+  &:focus {
+    outline: 3px solid var(--primary-500);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 
   & > *:not(:last-child) {
     margin-right: 0.25em;

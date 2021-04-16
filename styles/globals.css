@@ -27,6 +27,11 @@ body {
   font-size: clamp(16px, 12px + 0.75vw, 40px);
 }
 
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
+}
+
 html,
 body,
 body > *:first-child,
