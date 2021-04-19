@@ -6,8 +6,7 @@ const projects = [
     description: faker.lorem.paragraph(),
     imageProps: {
       src: '/images/projects/waldo.png',
-      width: 2000,
-      height: 1019,
+      format: 'xps15',
     },
     links: {
       github: 'https://github.com/rankoliang/waldo-api',
