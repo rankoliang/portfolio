@@ -37,6 +37,19 @@ const projects = [
       visit: 'https://battleship.rankoliang.com',
     },
   },
+  {
+    title: 'Chess',
+    description: faker.lorem.paragraph(),
+    imageProps: {
+      src: '/images/projects/chess.png',
+      width: 1396,
+      height: 1279,
+      format: 'terminal',
+    },
+    links: {
+      github: 'https://github.com/rankoliang/chess',
+    },
+  },
 ];
 
 export default projects;
