@@ -7,8 +7,8 @@ import TerminalImage from './TerminalImage';
 const Project = ({ project: { title, imageProps, description, links } }) => {
   return (
     <StyledProject>
-      <h3>{title}</h3>
       <ProjectImage {...imageProps} />
+      <h3>{title}</h3>
       <p>{description}</p>
       <ProjectLinks>
         {links?.github && <GithubLink href={links.github} target="_blank" />}

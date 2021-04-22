@@ -12,8 +12,6 @@ const StyledProjects = styled(Section)`
     content: '';
     display: block;
     border-bottom: 1px solid var(--gray-300);
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
   }
 `;
 
