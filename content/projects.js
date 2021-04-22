@@ -30,7 +30,7 @@ const projects = [
     description: faker.lorem.paragraph(),
     imageProps: {
       src: '/images/projects/battleship.png',
-      format: 'xps15',
+      format: 'screenshot',
     },
     links: {
       github: 'https://github.com/rankoliang/battleship',
