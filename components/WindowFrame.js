@@ -7,9 +7,9 @@ import {
   Close,
 } from '../styles/WindowFrame';
 
-const MenuBar = () => {
+const MenuBar = ({ size }) => {
   return (
-    <StyledMenuBar>
+    <StyledMenuBar size={size}>
       <Minimize />
       <Maximize />
       <Close />
@@ -17,11 +17,11 @@ const MenuBar = () => {
   );
 };
 
-const WindowFrame = ({ children }) => {
+const WindowFrame = ({ children, borderPadding, menuSize, ...props }) => {
   return (
-    <StyledWindowFrame>
-      <MenuBar />
-      <WindowFrameBorder>{children}</WindowFrameBorder>
+    <StyledWindowFrame {...props}>
+      <MenuBar size={menuSize} />
+      <WindowFrameBorder padding={borderPadding}>{children}</WindowFrameBorder>
     </StyledWindowFrame>
   );
 };

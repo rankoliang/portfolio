@@ -3,7 +3,7 @@ import WindowFrame from './WindowFrame';
 
 const TerminalImage = ({ ...imageProps }) => {
   return (
-    <WindowFrame>
+    <WindowFrame maxWidth="55ch" borderPadding="1.25em" menuSize={1} borderRadius="0.5em">
       <Image layout="responsive" {...imageProps} />
     </WindowFrame>
   );

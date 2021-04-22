@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const MenuIcon = styled.span`
-  height: ${({ size }) => size}rem;
-  width: ${({ size }) => size}rem;
+  height: ${({ size }) => size}em;
+  width: ${({ size }) => size}em;
   border-radius: 50%;
 `;
 
@@ -26,24 +26,38 @@ export const StyledMenuBar = styled.div`
   padding: ${({ size }) => (size * 3) / 4}rem;
   display: flex;
   justify-content: flex-end;
+  font-size: ${({ size }) => size}rem;
 
   & > span:not(:last-child) {
-    margin-right: ${({ size }) => size / 4}em;
+    margin-right: ${({ size }) => size / 4}rem;
   }
 `;
 
 StyledMenuBar.defaultProps = {
-  size: 1,
+  size: 0.6,
 };
 
 export const StyledWindowFrame = styled.div`
   margin: 0 auto;
-  max-width: 55ch;
-  background: var(--gray-800);
-  border-radius: 0.5rem;
+  background: var(--gray-900);
+  border-radius: ${({ borderRadius }) => borderRadius};
+
+  ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${maxWidth};
+    `}
 `;
 
+StyledWindowFrame.defaultProps = {
+  borderRadius: '0.35rem',
+};
+
 export const WindowFrameBorder = styled.div`
-  padding: 1.5em;
+  padding: ${({ padding }) => padding};
   padding-top: 0;
 `;
+
+WindowFrameBorder.defaultProps = {
+  padding: '6px',
+};
