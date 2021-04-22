@@ -1,11 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 
 const hint = keyframes`
-  0%, 80%, 90% {
+  0%, 10%, 20% {
     transform: inherit;
   }
 
-  85%, 95% {
+  5%, 15% {
     transform: translateY(1rem);
   }
 
@@ -26,6 +26,7 @@ const StyledScrollDown = styled.button`
     animation-duration: 10s;
     animation-name: ${hint};
     animation-iteration-count: infinite;
+    animation-delay: 5s;
   }
 
   & .icon {
