@@ -36,14 +36,14 @@ StyledMenuBar.defaultProps = {
   size: 1,
 };
 
-export const TerminalFrame = styled.div`
+export const StyledWindowFrame = styled.div`
   margin: 0 auto;
   max-width: 55ch;
   background: var(--gray-800);
   border-radius: 0.5rem;
 `;
 
-export const TerminalImageWrapper = styled.div`
+export const WindowFrameBorder = styled.div`
   padding: 1.5em;
   padding-top: 0;
 `;
