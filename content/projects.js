@@ -18,7 +18,7 @@ const projects = [
     description: faker.lorem.paragraph(),
     imageProps: {
       src: '/images/projects/odinbook.png',
-      format: 'xps15',
+      format: 'screenshot',
     },
     links: {
       github: 'https://github.com/rankoliang/odinbook',
