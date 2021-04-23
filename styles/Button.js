@@ -7,6 +7,9 @@ const theme = {
     return (
       {
         primary: 'var(--primary-500)',
+        rails: '#cc0000',
+        ruby: '#d91404',
+        react: 'var(--gray-700)',
       }[color] || defaultColor
     );
   },
@@ -17,6 +20,7 @@ const theme = {
       {
         white: 'black',
         black: 'white',
+        react: '#61dafb',
       }[color] || defaultColor
     );
   },
@@ -28,8 +32,8 @@ const outlinedStyles = ({ outlined }) => {
       color: ${theme.background};
       box-shadow: inset 0 0 0 0.1em ${theme.background};
 
-      &:focus,
-      &:hover {
+      button&:focus,
+      a&:hover {
         box-shadow: inset 0 0 0 2em ${theme.background};
         color: ${theme.foreground};
       }
@@ -39,8 +43,8 @@ const outlinedStyles = ({ outlined }) => {
       color: ${theme.foreground};
       box-shadow: inset 0 0 0 2em ${theme.background};
 
-      &:focus,
-      &:hover {
+      button&:focus,
+      a&:hover {
         box-shadow: inset 0 0 0 0.1em ${theme.background};
         color: ${theme.background};
       }
@@ -53,8 +57,8 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   background: none;
-  font-size: 1.25rem;
-  padding: 0.15em 0.5em;
+  font-size: ${({ size }) => size};
+  padding: ${({ padding }) => padding};
   border-radius: 0.2em;
   font-family: Roboto, sans-serif;
   font-weight: 500;
@@ -67,15 +71,12 @@ const StyledButton = styled.button`
     outline: 3px solid var(--primary-500);
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
   & > *:not(:last-child) {
-    margin-right: 0.25em;
+    margin-right: ${({ gap }) => gap};
   }
 
-  &:active {
+  button&:active,
+  a&:active {
     transform: translateY(0.1em);
   }
 `;
@@ -83,6 +84,9 @@ const StyledButton = styled.button`
 StyledButton.defaultProps = {
   color: 'white',
   outlined: false,
+  size: '1.25rem',
+  padding: '0.15em 0.5em',
+  gap: '0.25rem',
 };
 
 export default StyledButton;

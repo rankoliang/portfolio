@@ -1,7 +1,7 @@
 // Code adapted from ReactIcons
 // https://github.com/react-icons/react-icons/blob/master/packages/react-icons/src/iconBase.tsx
 
-const IconBase = ({ attr, size = '1em', title, children, ...svgProps }) => {
+const IconBase = ({ attr, size = '0.9em', title, children, ...svgProps }) => {
   return (
     <svg
       stroke="currentColor"

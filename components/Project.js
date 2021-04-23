@@ -4,12 +4,14 @@ import GithubLink from './buttons/GithubLink';
 import Button from './Button.js';
 import WindowFrame from './WindowFrame';
 import TerminalImage from './TerminalImage';
+import ProjectTags from './ProjectTags';
 
 const Project = ({ project: { title, imageProps, description, links } }) => {
   return (
     <StyledProject>
       <ProjectImage {...imageProps} />
       <h3>{title}</h3>
+      <ProjectTags />
       <p suppressHydrationWarning>{description}</p>
       <ProjectLinks>
         {links?.github && <GithubLink href={links.github} target="_blank" />}
