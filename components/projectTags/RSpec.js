@@ -3,7 +3,7 @@ import ProjectTagWrapper from '../ProjectTagWrapper';
 
 const RSpecTag = () => {
   return (
-    <ProjectTagWrapper color="rspec" outlined>
+    <ProjectTagWrapper background="#7fd2ed" text="#ef4561" outlined>
       <RSpecIcon />
       <span>RSpec</span>
     </ProjectTagWrapper>

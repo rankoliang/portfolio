@@ -1,33 +1,29 @@
 import styled, { css } from 'styled-components';
 
 const theme = {
-  text: ({ color }) => {
-    return {
-      rspec: '#ef4561',
-    }[color];
+  text: ({ text }) => {
+    if (text) return text;
   },
-  background: ({ color }) => {
+  background: ({ color, background }) => {
+    if (background) return background;
+
     const defaultColor = color;
 
     return (
       {
         primary: 'var(--primary-500)',
-        rails: '#cc0000',
-        ruby: '#d91404',
-        react: 'var(--gray-700)',
-        rspec: '#7fd2ed',
       }[color] || defaultColor
     );
   },
-  foreground: ({ color }) => {
+  foreground: ({ color, foreground }) => {
+    if (foreground) return foreground;
+
     const defaultColor = 'white';
 
     return (
       {
         white: 'black',
         black: 'white',
-        react: '#61dafb',
-        rspec: '#ef4561',
       }[color] || defaultColor
     );
   },
