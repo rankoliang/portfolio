@@ -3,7 +3,7 @@ import ProjectTagWrapper from '../ProjectTagWrapper';
 
 const RailsTag = () => {
   return (
-    <ProjectTagWrapper color="rails">
+    <ProjectTagWrapper color="rails" outlined>
       <RailsIcon />
       <span>Rails</span>
     </ProjectTagWrapper>
