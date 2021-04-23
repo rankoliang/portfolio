@@ -2,11 +2,11 @@ import { Tags } from '../styles/Project';
 import Button from './Button';
 import RubyTag from './projectTags/Ruby';
 import RailsTag from './projectTags/Rails';
+import ReactTag from './projectTags/React';
 
-const tagComponents = { Ruby: RubyTag, Rails: RailsTag };
+const tagComponents = { Ruby: RubyTag, Rails: RailsTag, React: ReactTag };
 
 const ProjectTags = ({ tags = Object.keys(tagComponents) }) => {
-  console.log(tags);
   return (
     <Tags>
       {tags.map((tagName) => {
