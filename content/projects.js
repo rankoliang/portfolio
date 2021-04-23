@@ -8,6 +8,7 @@ const projects = [
     imageProps: {
       src: '/images/projects/waldo.png',
       format: 'screenshot',
+      alt: 'Department Store level of Waldo app',
     },
     links: {
       github: 'https://github.com/rankoliang/waldo-api',
@@ -21,6 +22,7 @@ const projects = [
     imageProps: {
       src: '/images/projects/odinbook.png',
       format: 'screenshot',
+      alt: 'Screenshot of an Odinbook feed',
     },
     links: {
       github: 'https://github.com/rankoliang/odinbook',
@@ -34,6 +36,7 @@ const projects = [
     imageProps: {
       src: '/images/projects/battleship.png',
       format: 'screenshot',
+      alt: 'A game of battleship',
     },
     links: {
       github: 'https://github.com/rankoliang/battleship',
@@ -49,6 +52,7 @@ const projects = [
       width: 1396,
       height: 1279,
       format: 'terminal',
+      alt: 'A game of chess on the terminal',
     },
     links: {
       github: 'https://github.com/rankoliang/chess',

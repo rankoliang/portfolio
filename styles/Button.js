@@ -34,49 +34,49 @@ const fallback = (...functions) => (props) => {
 };
 
 const outlinedStyles = ({ outlined }) => {
+  let primary;
+  let secondary;
+  let idle;
+  let active;
+  let outlinedStyle = css`
+    box-shadow: inset 0 0 0 0.1em ${theme.background};
+  `;
+  let filledStyle = css`
+    box-shadow: inset 0 0 0 2em ${theme.background};
+  `;
+
   if (outlined) {
-    return css`
-      color: ${fallback(theme.text, theme.background)};
-      box-shadow: inset 0 0 0 0.1em ${theme.background};
-
-      ${({ hoverAnimationDisabled }) =>
-        hoverAnimationDisabled ||
-        css`
-          button&:focus,
-          button&:hover,
-          a&:focus,
-          a&:hover {
-            svg {
-              color: ${fallback(theme.text, theme.foreground)};
-            }
-
-            box-shadow: inset 0 0 0 2em ${theme.background};
-            color: ${theme.foreground};
-          }
-        `}
-    `;
+    primary = theme.background;
+    secondary = theme.foreground;
+    idle = outlinedStyle;
+    active = filledStyle;
   } else {
-    return css`
-      color: ${fallback(theme.text, theme.foreground)};
-      box-shadow: inset 0 0 0 2em ${theme.background};
-
-      ${({ hoverAnimationDisabled }) =>
-        hoverAnimationDisabled ||
-        css`
-          button&:focus,
-          button&:hover,
-          a&:focus,
-          a&:hover {
-            svg {
-              color: ${fallback(theme.text, theme.background)};
-            }
-
-            box-shadow: inset 0 0 0 0.1em ${theme.background};
-            color: ${theme.background};
-          }
-        `}
-    `;
+    primary = theme.foreground;
+    secondary = theme.background;
+    idle = filledStyle;
+    active = outlinedStyle;
   }
+
+  return css`
+    color: ${fallback(theme.text, primary)};
+    ${idle}
+
+    ${({ hoverAnimationDisabled }) =>
+      hoverAnimationDisabled ||
+      css`
+        button&:focus,
+        button&:hover,
+        a&:focus,
+        a&:hover {
+          svg {
+            color: ${fallback(theme.text, secondary)};
+          }
+
+          ${active}
+          color: ${secondary};
+        }
+      `}
+  `;
 };
 
 const StyledButton = styled.button`
@@ -112,6 +112,10 @@ const StyledButton = styled.button`
   button&:active,
   a&:active {
     transform: translateY(0.1em);
+  }
+
+  svg {
+    transition: inherit;
   }
 `;
 
