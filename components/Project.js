@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import StyledProject, { ProjectLinks } from '../styles/Project';
 import GithubLink from './buttons/GithubLink';
 import Button from './Button.js';
 import WindowFrame from './WindowFrame';
 import TerminalImage from './TerminalImage';
 import ProjectTags from './ProjectTags';
+import ImageWithPlaceholder from './ImageWithPlaceholder';
 
 const Project = ({
   project: { title, imageProps, description, links, tags = [] },
@@ -34,7 +34,7 @@ const ProjectImage = ({ format, ...imageProps }) => {
     case 'screenshot':
       return (
         <WindowFrame>
-          <Image
+          <ImageWithPlaceholder
             layout="responsive"
             width={1920}
             height={1080}
@@ -48,7 +48,7 @@ const ProjectImage = ({ format, ...imageProps }) => {
   }
   return (
     <div>
-      <Image layout="responsive" {...imageProps} />
+      <ImageWithPlaceholder layout="responsive" {...imageProps} />
     </div>
   );
 };

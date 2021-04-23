@@ -4,19 +4,21 @@ import getPlaceholder from '../utils/getPlaceholder';
 import Container from '../styles/Container';
 import About from '../components/About';
 import Projects from '../components/Projects';
-import projects from '../content/projects';
+import getProjects from '../utils/getProjects';
 
 export const getStaticProps = async () => {
   const hero = await getPlaceholder('/images/hero.jpg');
+  const projects = await getProjects();
 
   return {
     props: {
       hero,
+      projects,
     },
   };
 };
 
-export default function Home({ hero }) {
+export default function Home({ hero, projects }) {
   useEffect(() => {
     document.documentElement.classList.add('no-focus-outline');
 

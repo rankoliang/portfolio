@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Where's Waldo?",
     description: faker.lorem.paragraph(),
-    tags: ['rails', 'react', 'rspec', 'redux', 'docker', 'aws'],
+    tags: ['ruby', 'rails', 'react', 'rspec', 'redux', 'docker', 'aws'],
     imageProps: {
       src: '/images/projects/waldo.png',
       format: 'screenshot',
