@@ -5,6 +5,7 @@ import RailsTag from './projectTags/Rails';
 import ReactTag from './projectTags/React';
 import RSpecTag from './projectTags/RSpec';
 import ReduxTag from './projectTags/Redux';
+import DockerTag from './projectTags/Docker';
 
 const tagComponents = {
   Ruby: RubyTag,
@@ -12,6 +13,7 @@ const tagComponents = {
   React: ReactTag,
   RSpec: RSpecTag,
   Redux: ReduxTag,
+  Docker: DockerTag,
 };
 
 const ProjectTags = ({ tags = Object.keys(tagComponents) }) => {

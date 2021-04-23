@@ -1,7 +1,7 @@
 import IconBase from './IconBase';
 
 // Icon from https://devicon.dev/
-const RailsIcon = (props) => {
+const RubyIcon = (props) => {
   return (
     <IconBase {...props}>
       <path
@@ -13,4 +13,4 @@ const RailsIcon = (props) => {
   );
 };
 
-export default RailsIcon;
+export default RubyIcon;
