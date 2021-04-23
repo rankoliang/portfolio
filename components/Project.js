@@ -6,12 +6,14 @@ import WindowFrame from './WindowFrame';
 import TerminalImage from './TerminalImage';
 import ProjectTags from './ProjectTags';
 
-const Project = ({ project: { title, imageProps, description, links } }) => {
+const Project = ({
+  project: { title, imageProps, description, links, tags = [] },
+}) => {
   return (
     <StyledProject>
       <ProjectImage {...imageProps} />
       <h3>{title}</h3>
-      <ProjectTags />
+      <ProjectTags tags={tags} />
       <p suppressHydrationWarning>{description}</p>
       <ProjectLinks>
         {links?.github && <GithubLink href={links.github} target="_blank" />}

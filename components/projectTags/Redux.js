@@ -3,7 +3,12 @@ import ProjectTagWrapper from '../ProjectTagWrapper';
 
 const ReduxTag = () => {
   return (
-    <ProjectTagWrapper background="#764abc" outlined>
+    <ProjectTagWrapper
+      as="a"
+      href="https://redux.js.org/"
+      background="#764abc"
+      outlined
+    >
       <ReduxIcon />
       <span>Redux</span>
     </ProjectTagWrapper>

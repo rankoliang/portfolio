@@ -9,13 +9,13 @@ import DockerTag from './projectTags/Docker';
 import AWSTag from './projectTags/AWS';
 
 const tagComponents = {
-  Ruby: RubyTag,
-  Rails: RailsTag,
-  React: ReactTag,
-  RSpec: RSpecTag,
-  Redux: ReduxTag,
-  Docker: DockerTag,
-  AWS: AWSTag,
+  ruby: RubyTag,
+  rails: RailsTag,
+  react: ReactTag,
+  rspec: RSpecTag,
+  redux: ReduxTag,
+  docker: DockerTag,
+  aws: AWSTag,
 };
 
 const ProjectTags = ({ tags = [] }) => {

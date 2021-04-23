@@ -3,7 +3,12 @@ import ProjectTagWrapper from '../ProjectTagWrapper';
 
 const DockerTag = () => {
   return (
-    <ProjectTagWrapper background="#019bc6" outlined>
+    <ProjectTagWrapper
+      as="a"
+      href="https://www.docker.com/"
+      background="#019bc6"
+      outlined
+    >
       <DockerIcon />
       <span>Docker</span>
     </ProjectTagWrapper>

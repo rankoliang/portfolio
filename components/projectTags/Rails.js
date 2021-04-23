@@ -3,7 +3,12 @@ import ProjectTagWrapper from '../ProjectTagWrapper';
 
 const RailsTag = () => {
   return (
-    <ProjectTagWrapper background="#cc0000" outlined>
+    <ProjectTagWrapper
+      as="a"
+      href="https://rubyonrails.org/"
+      background="#cc0000"
+      outlined
+    >
       <RailsIcon />
       <span>Rails</span>
     </ProjectTagWrapper>

@@ -4,6 +4,7 @@ const projects = [
   {
     title: "Where's Waldo?",
     description: faker.lorem.paragraph(),
+    tags: ['rails', 'react', 'rspec', 'redux', 'docker', 'aws'],
     imageProps: {
       src: '/images/projects/waldo.png',
       format: 'screenshot',
@@ -16,6 +17,7 @@ const projects = [
   {
     title: 'Odinbook',
     description: faker.lorem.paragraph(),
+    tags: ['ruby', 'rails', 'rspec'],
     imageProps: {
       src: '/images/projects/odinbook.png',
       format: 'screenshot',
@@ -28,6 +30,7 @@ const projects = [
   {
     title: 'Battleship',
     description: faker.lorem.paragraph(),
+    tags: ['react', 'redux'],
     imageProps: {
       src: '/images/projects/battleship.png',
       format: 'screenshot',
@@ -40,6 +43,7 @@ const projects = [
   {
     title: 'Chess',
     description: faker.lorem.paragraph(),
+    tags: ['ruby', 'rspec'],
     imageProps: {
       src: '/images/projects/chess.png',
       width: 1396,

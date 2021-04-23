@@ -39,22 +39,42 @@ const outlinedStyles = ({ outlined }) => {
       color: ${fallback(theme.text, theme.background)};
       box-shadow: inset 0 0 0 0.1em ${theme.background};
 
-      button&:focus,
-      a&:hover {
-        box-shadow: inset 0 0 0 2em ${theme.background};
-        color: ${theme.foreground};
-      }
+      ${({ hoverAnimationDisabled }) =>
+        hoverAnimationDisabled ||
+        css`
+          button&:focus,
+          button&:hover,
+          a&:focus,
+          a&:hover {
+            svg {
+              color: ${fallback(theme.text, theme.foreground)};
+            }
+
+            box-shadow: inset 0 0 0 2em ${theme.background};
+            color: ${theme.foreground};
+          }
+        `}
     `;
   } else {
     return css`
       color: ${fallback(theme.text, theme.foreground)};
       box-shadow: inset 0 0 0 2em ${theme.background};
 
-      button&:focus,
-      a&:hover {
-        box-shadow: inset 0 0 0 0.1em ${theme.background};
-        color: ${theme.background};
-      }
+      ${({ hoverAnimationDisabled }) =>
+        hoverAnimationDisabled ||
+        css`
+          button&:focus,
+          button&:hover,
+          a&:focus,
+          a&:hover {
+            svg {
+              color: ${fallback(theme.text, theme.background)};
+            }
+
+            box-shadow: inset 0 0 0 0.1em ${theme.background};
+            color: ${theme.background};
+          }
+        `}
     `;
   }
 };
