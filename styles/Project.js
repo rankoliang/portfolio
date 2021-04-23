@@ -11,6 +11,7 @@ export const ProjectLinks = styled.div`
 
 export const Tags = styled(ProjectLinks)`
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const StyledProject = styled(Section)`

@@ -72,6 +72,13 @@ const StyledButton = styled.button`
   transition-property: box-shadow, color, transform;
   transition-duration: 0.4s, 0.4s, 0.1s;
   transition-timing-function: ease-out, ease-out, ease-out;
+
+  ${({ margin }) =>
+    margin &&
+    css`
+      margin: ${({ margin }) => margin};
+    `}
+
   ${outlinedStyles}
 
   &:focus {
