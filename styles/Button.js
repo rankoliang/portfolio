@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
 const theme = {
+  text: ({ color }) => {
+    return {
+      rspec: '#ef4561',
+    }[color];
+  },
   background: ({ color }) => {
     const defaultColor = color;
 
@@ -10,6 +15,7 @@ const theme = {
         rails: '#cc0000',
         ruby: '#d91404',
         react: 'var(--gray-700)',
+        rspec: '#7fd2ed',
       }[color] || defaultColor
     );
   },
@@ -21,15 +27,20 @@ const theme = {
         white: 'black',
         black: 'white',
         react: '#61dafb',
+        rspec: '#ef4561',
       }[color] || defaultColor
     );
   },
 };
 
+const fallback = (...functions) => (props) => {
+  return functions.find((fn) => fn(props));
+};
+
 const outlinedStyles = ({ outlined }) => {
   if (outlined) {
     return css`
-      color: ${theme.background};
+      color: ${fallback(theme.text, theme.background)};
       box-shadow: inset 0 0 0 0.1em ${theme.background};
 
       button&:focus,
@@ -40,7 +51,7 @@ const outlinedStyles = ({ outlined }) => {
     `;
   } else {
     return css`
-      color: ${theme.foreground};
+      color: ${fallback(theme.text, theme.foreground)};
       box-shadow: inset 0 0 0 2em ${theme.background};
 
       button&:focus,

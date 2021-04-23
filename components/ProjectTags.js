@@ -3,8 +3,14 @@ import Button from './Button';
 import RubyTag from './projectTags/Ruby';
 import RailsTag from './projectTags/Rails';
 import ReactTag from './projectTags/React';
+import RSpecTag from './projectTags/RSpec';
 
-const tagComponents = { Ruby: RubyTag, Rails: RailsTag, React: ReactTag };
+const tagComponents = {
+  Ruby: RubyTag,
+  Rails: RailsTag,
+  React: ReactTag,
+  RSpec: RSpecTag,
+};
 
 const ProjectTags = ({ tags = Object.keys(tagComponents) }) => {
   return (
