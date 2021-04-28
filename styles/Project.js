@@ -41,6 +41,10 @@ const StyledProject = styled(Section)`
   &:not(:last-child)::after {
     margin: 3rem 0;
   }
+
+  &:last-child {
+    margin-bottom: 3rem;
+  }
 `;
 
 export default StyledProject;
@@ -51,9 +55,16 @@ export const CompactProject = styled(StyledProject)`
   flex-wrap: wrap;
   justify-content: center;
   margin: ${({ gap }) => `-${gap} -${gap}`};
+  margin-top: -2rem;
 
   & > * {
     margin: ${({ gap }) => gap};
+  }
+
+  &:not(:last-child)::after {
+    margin-top: 1rem;
+    margin-left: calc(${({ gap }) => gap});
+    margin-right: calc(${({ gap }) => gap});
   }
 
   ${ProjectInfo} {

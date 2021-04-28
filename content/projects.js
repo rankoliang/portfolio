@@ -60,7 +60,7 @@ const projects = [
   },
   {
     title: 'Memory Game',
-    description: faker.lorem.paragraph(1),
+    description: faker.lorem.sentences(2),
     imageProps: {
       src: '/images/projects/compact/memory-game.png',
       format: 'compact',
@@ -69,6 +69,19 @@ const projects = [
     links: {
       github: 'https://github.com/rankoliang/memory-game',
       visit: 'https://rankoliang.github.io/memory-game',
+    },
+  },
+  {
+    title: 'Shopping Cart',
+    description: faker.lorem.sentences(2),
+    imageProps: {
+      src: '/images/projects/compact/shopping-cart.png',
+      format: 'compact',
+      alt: 'Shipping Cart screenshot',
+    },
+    links: {
+      github: 'https://github.com/rankoliang/shopping-cart',
+      visit: 'https://rankoliang.github.io/shopping-cart',
     },
   },
 ];
