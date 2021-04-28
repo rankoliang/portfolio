@@ -84,6 +84,19 @@ const projects = [
       visit: 'https://rankoliang.github.io/shopping-cart',
     },
   },
+  {
+    title: 'Restaurant Page',
+    description: faker.lorem.sentences(2),
+    imageProps: {
+      src: '/images/projects/compact/restaurant-page.png',
+      format: 'compact',
+      alt: 'Restaurant page screenshot',
+    },
+    links: {
+      github: 'https://github.com/rankoliang/restaurant-page',
+      visit: 'https://rankoliang.github.io/restaurant-page',
+    },
+  },
 ];
 
 export default projects;
