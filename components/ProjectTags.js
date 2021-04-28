@@ -20,21 +20,23 @@ const tagComponents = {
 
 const ProjectTags = ({ tags = [] }) => {
   return (
-    <Tags>
-      {tags.map((tagName) => {
-        const TagComponent = tagComponents[tagName];
+    tags.length > 0 && (
+      <Tags>
+        {tags.map((tagName) => {
+          const TagComponent = tagComponents[tagName];
 
-        if (TagComponent) {
-          return <TagComponent key={tagName} />;
-        } else {
-          return (
-            <Button as="div" size="1rem" color="black" key={tagName} outlined>
-              {tagName}
-            </Button>
-          );
-        }
-      })}
-    </Tags>
+          if (TagComponent) {
+            return <TagComponent key={tagName} />;
+          } else {
+            return (
+              <Button as="div" size="1rem" color="black" key={tagName} outlined>
+                {tagName}
+              </Button>
+            );
+          }
+        })}
+      </Tags>
+    )
   );
 };
 

@@ -1,4 +1,4 @@
-import StyledProject, { ProjectLinks } from '../styles/Project';
+import StyledProject, { ProjectLinks, ProjectInfo } from '../styles/Project';
 import GithubLink from './buttons/GithubLink';
 import Button from './Button.js';
 import WindowFrame from './WindowFrame';
@@ -10,19 +10,21 @@ const Project = ({
   project: { title, imageProps, description, links, tags = [] },
 }) => {
   return (
-    <StyledProject>
+    <StyledProject imageFormat={imageProps.imageFormat}>
       <ProjectImage {...imageProps} />
-      <h3>{title}</h3>
-      <ProjectTags tags={tags} />
-      <p suppressHydrationWarning>{description}</p>
-      <ProjectLinks>
-        {links?.github && <GithubLink href={links.github} target="_blank" />}
-        {links?.visit && (
-          <Button as="a" href={links.visit} target="_blank" color="primary">
-            Visit
-          </Button>
-        )}
-      </ProjectLinks>
+      <ProjectInfo>
+        <h3>{title}</h3>
+        <ProjectTags tags={tags} />
+        <p suppressHydrationWarning>{description}</p>
+        <ProjectLinks>
+          {links?.github && <GithubLink href={links.github} target="_blank" />}
+          {links?.visit && (
+            <Button as="a" href={links.visit} target="_blank" color="primary">
+              Visit
+            </Button>
+          )}
+        </ProjectLinks>
+      </ProjectInfo>
     </StyledProject>
   );
 };

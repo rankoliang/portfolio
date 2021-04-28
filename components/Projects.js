@@ -10,6 +10,7 @@ const StyledProjects = styled(Section)`
 
   & > *:not(:first-child):not(:last-child)::after {
     content: '';
+    align-self: stretch;
     display: block;
     border-bottom: 1px solid var(--gray-300);
   }

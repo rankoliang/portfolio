@@ -14,19 +14,28 @@ export const Tags = styled(ProjectLinks)`
   flex-wrap: wrap;
 `;
 
-const StyledProject = styled(Section)`
-  margin-top: 3em;
+export const ProjectInfo = styled.div`
+  margin-top: 1em;
 
-  &:not(:last-child)::after {
-    margin-top: 3em;
+  & > *:not(:first-child) {
+    margin-top: 0.5rem;
   }
 
   h3 {
-    margin-top: 1em;
     text-align: center;
     font-family: Lato, sans-serif;
     font-size: 1.5rem;
     text-transform: uppercase;
+  }
+`;
+
+const StyledProject = styled(Section)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:not(:last-child)::after {
+  margin: 3rem 0;
   }
 `;
 

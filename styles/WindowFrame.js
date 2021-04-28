@@ -38,7 +38,7 @@ StyledMenuBar.defaultProps = {
 };
 
 export const StyledWindowFrame = styled.div`
-  margin: 0 auto;
+  width: 100%;
   background: var(--gray-900);
   border-radius: ${({ borderRadius }) => borderRadius};
 
