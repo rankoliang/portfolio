@@ -97,6 +97,19 @@ const projects = [
       visit: 'https://rankoliang.github.io/restaurant-page',
     },
   },
+  {
+    title: 'Library Tracker',
+    description: faker.lorem.sentences(2),
+    imageProps: {
+      src: '/images/projects/compact/library.png',
+      format: 'compact',
+      alt: 'Restaurant page screenshot',
+    },
+    links: {
+      github: 'https://github.com/rankoliang/library',
+      visit: 'https://rankoliang.github.io/library',
+    },
+  },
 ];
 
 export default projects;
