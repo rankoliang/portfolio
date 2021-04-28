@@ -27,6 +27,10 @@ export default function Home({ hero, projects }) {
         document.documentElement.classList.remove('no-focus-outline');
       }
     });
+
+    document.body.addEventListener('mousedown', () => {
+      document.documentElement.classList.add('no-focus-outline');
+    });
   }, []);
 
   return (
