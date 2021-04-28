@@ -22,6 +22,7 @@ const Project = ({
       ProjectWrapper = StyledProject;
   }
 
+  // TODO remove suppressHydrationWarning after replacing descriptions
   return (
     <ProjectWrapper>
       <ProjectImage {...imageProps} />
@@ -43,12 +44,14 @@ const Project = ({
 };
 
 const ProjectImage = ({ format, ...imageProps }) => {
+  let windowFrameProps = {};
+
   switch (format) {
     case 'terminal':
       return <TerminalImage {...imageProps} />;
     case 'screenshot':
       return (
-        <WindowFrame>
+        <WindowFrame {...windowFrameProps}>
           <ImageWithPlaceholder
             layout="responsive"
             width={1920}
@@ -67,10 +70,15 @@ const ProjectImage = ({ format, ...imageProps }) => {
         overflow: 'hidden',
         ...imageProps,
       };
+      windowFrameProps = {
+        ...windowFrameProps,
+        borderWidth: '4px',
+        menuSize: 0.4,
+      };
       break;
   }
   return (
-    <WindowFrame>
+    <WindowFrame {...windowFrameProps}>
       <ImageWithPlaceholder layout="responsive" {...imageProps} />
     </WindowFrame>
   );
