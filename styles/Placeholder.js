@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const ImageWrapper = styled.div`
+  &, & > div {
+    height: 100%;
+  }
+
   position: relative;
   overflow: hidden;
 `;

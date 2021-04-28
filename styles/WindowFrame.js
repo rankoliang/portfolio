@@ -41,6 +41,8 @@ export const StyledWindowFrame = styled.div`
   width: 100%;
   background: var(--gray-900);
   border-radius: ${({ borderRadius }) => borderRadius};
+  display: flex;
+  flex-direction: column;
 
   ${({ maxWidth }) =>
     maxWidth &&
@@ -54,10 +56,12 @@ StyledWindowFrame.defaultProps = {
 };
 
 export const WindowFrameBorder = styled.div`
-  padding: ${({ padding }) => padding};
+  padding: 0 ${({ borderWidth }) => borderWidth};
+  margin-bottom: ${({ borderWidth }) => borderWidth};
+  overflow: hidden;
   padding-top: 0;
 `;
 
 WindowFrameBorder.defaultProps = {
-  padding: '6px',
+  borderWidth: '6px',
 };

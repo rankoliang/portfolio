@@ -5,7 +5,7 @@ const TerminalImage = ({ placeholderSrc, ...imageProps }) => {
   return (
     <WindowFrame
       maxWidth="55ch"
-      borderPadding="1.25em"
+      borderWidth="1.25em"
       menuSize={1}
       borderRadius="0.5em"
     >

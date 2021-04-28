@@ -58,6 +58,19 @@ const projects = [
       github: 'https://github.com/rankoliang/chess',
     },
   },
+  {
+    title: 'Memory Game',
+    description: faker.lorem.paragraph(1),
+    imageProps: {
+      src: '/images/projects/compact/memory-game.png',
+      format: 'compact',
+      alt: 'Memory game screenshot',
+    },
+    links: {
+      github: 'https://github.com/rankoliang/memory-game',
+      visit: 'https://rankoliang.github.io/memory-game',
+    },
+  },
 ];
 
 export default projects;

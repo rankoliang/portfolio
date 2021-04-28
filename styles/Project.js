@@ -34,9 +34,50 @@ const StyledProject = styled(Section)`
   flex-direction: column;
   align-items: center;
 
+  &:nth-child(2) {
+    margin-top: 3rem;
+  }
+
   &:not(:last-child)::after {
-  margin: 3rem 0;
+    margin: 3rem 0;
   }
 `;
 
 export default StyledProject;
+
+export const CompactProject = styled(StyledProject)`
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: ${({ gap }) => `-${gap} -${gap}`};
+
+  & > * {
+    margin: ${({ gap }) => gap};
+  }
+
+  ${ProjectInfo} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: min(
+      calc(60ch - 6 * ${({ gap }) => gap}),
+      calc(100% - 2 * ${({ gap }) => gap})
+    );
+
+    h3 {
+      text-align: left;
+      white-space: nowrap;
+    }
+  }
+
+  & > *:first-child {
+    width: 15ch;
+    height: 15ch;
+  }
+`;
+
+CompactProject.defaultProps = {
+  gap: '0.5rem',
+};

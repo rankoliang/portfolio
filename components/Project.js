@@ -1,4 +1,8 @@
-import StyledProject, { ProjectLinks, ProjectInfo } from '../styles/Project';
+import StyledProject, {
+  ProjectLinks,
+  ProjectInfo,
+  CompactProject,
+} from '../styles/Project';
 import GithubLink from './buttons/GithubLink';
 import Button from './Button.js';
 import WindowFrame from './WindowFrame';
@@ -9,8 +13,17 @@ import ImageWithPlaceholder from './ImageWithPlaceholder';
 const Project = ({
   project: { title, imageProps, description, links, tags = [] },
 }) => {
+  let ProjectWrapper;
+  switch (imageProps.format) {
+    case 'compact':
+      ProjectWrapper = CompactProject;
+      break;
+    default:
+      ProjectWrapper = StyledProject;
+  }
+
   return (
-    <StyledProject imageFormat={imageProps.imageFormat}>
+    <ProjectWrapper>
       <ProjectImage {...imageProps} />
       <ProjectInfo>
         <h3>{title}</h3>
@@ -25,7 +38,7 @@ const Project = ({
           )}
         </ProjectLinks>
       </ProjectInfo>
-    </StyledProject>
+    </ProjectWrapper>
   );
 };
 
@@ -44,14 +57,22 @@ const ProjectImage = ({ format, ...imageProps }) => {
           />
         </WindowFrame>
       );
-    case 'xps15':
-      imageProps = { width: 2000, height: 1019, ...imageProps };
+    case 'compact':
+      imageProps = {
+        width: 500,
+        height: 500,
+        layout: 'intrinsic',
+        objectFit: 'cover',
+        objectPosition: 'center top',
+        overflow: 'hidden',
+        ...imageProps,
+      };
       break;
   }
   return (
-    <div>
+    <WindowFrame>
       <ImageWithPlaceholder layout="responsive" {...imageProps} />
-    </div>
+    </WindowFrame>
   );
 };
 

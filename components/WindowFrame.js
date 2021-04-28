@@ -17,11 +17,13 @@ const MenuBar = ({ size }) => {
   );
 };
 
-const WindowFrame = ({ children, borderPadding, menuSize, ...props }) => {
+const WindowFrame = ({ children, borderWidth, menuSize, ...props }) => {
   return (
     <StyledWindowFrame {...props}>
       <MenuBar size={menuSize} />
-      <WindowFrameBorder padding={borderPadding}>{children}</WindowFrameBorder>
+      <WindowFrameBorder borderWidth={borderWidth}>
+        <div style={{ overflow: 'hidden', height: '100%' }}>{children}</div>
+      </WindowFrameBorder>
     </StyledWindowFrame>
   );
 };
