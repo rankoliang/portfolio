@@ -4,7 +4,7 @@ const Container = styled.div`
   padding: 0 1em;
   margin: ${({ marginY }) => marginY} auto;
   width: 100%;
-  max-width: 75ch;
+  max-width: var(--container-max-width);
 
   & > *:not(:last-child) {
     margin-bottom: 1em;

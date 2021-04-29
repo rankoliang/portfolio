@@ -71,9 +71,13 @@ export const CompactProject = styled(StyledProject)`
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-self: stretch;
     justify-content: space-between;
     min-width: min(
-      calc(60ch - 6 * ${({ gap }) => gap}),
+      calc(
+        calc(var(--container-max-width) - ${({ imageSize }) => imageSize}) - 6 *
+          ${({ gap }) => gap}
+      ),
       calc(100% - 2 * ${({ gap }) => gap})
     );
 
@@ -84,11 +88,12 @@ export const CompactProject = styled(StyledProject)`
   }
 
   & > *:first-child {
-    width: 15ch;
-    height: 15ch;
+    width: ${({ imageSize }) => imageSize};
+    height: ${({ imageSize }) => imageSize};
   }
 `;
 
 CompactProject.defaultProps = {
   gap: '0.5rem',
+  imageSize: '15ch',
 };

@@ -11,6 +11,7 @@
   --navbar-bg: var(--gray-700);
 
   --header-height: 2em;
+  --container-max-width: 75ch;
 }
 
 * {
