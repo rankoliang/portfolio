@@ -14,12 +14,12 @@ const Header = () => {
       <NavbarStart />
       <NavbarCenter>
         <Brand>
-          <Name mobile={{ size: '1.25rem' }} />
+          <Name mobile={{ size: '1.5rem' }} />
         </Brand>
       </NavbarCenter>
       <NavbarEnd>
         <a href="https://github.com/rankoliang/" aria-label="Github Profile">
-          <GithubIcon size="1.25rem" />
+          <GithubIcon size="1.5rem" />
         </a>
       </NavbarEnd>
     </StyledHeader>

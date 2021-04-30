@@ -12,7 +12,7 @@
   --primary-500: #2d9cdb;
   --navbar-bg: var(--gray-700);
 
-  --header-height: 2em;
+  --header-height: 2.5rem;
   --container-horizontal-padding: 2em;
   --container-vertical-padding: 1.5em;
   --container-max-width: calc(75ch + 2 * var(--container-horizontal-padding));
