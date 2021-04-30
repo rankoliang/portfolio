@@ -93,6 +93,11 @@ const StyledButton = styled.button`
   transition-duration: 0.4s, 0.4s, 0.1s;
   transition-timing-function: ease-out, ease-out, ease-out;
 
+  a&:hover,
+  button&:hover {
+    cursor: pointer;
+  }
+
   ${({ margin }) =>
     margin &&
     css`

@@ -4,6 +4,7 @@ import getPlaceholder from '../utils/getPlaceholder';
 import Container from '../styles/Container';
 import About from '../components/About';
 import Projects from '../components/Projects';
+import ContactForm from '../components/ContactForm';
 import getProjects from '../utils/getProjects';
 
 export const getStaticProps = async () => {
@@ -36,9 +37,10 @@ export default function Home({ hero, projects }) {
   return (
     <>
       <Hero hero={hero} />
-      <Container marginY="0.75em">
+      <Container>
         <Projects projects={projects} />
         <About />
+        <ContactForm />
       </Container>
     </>
   );

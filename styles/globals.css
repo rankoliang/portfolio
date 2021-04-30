@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
 
 :root {
+  --gray-200: #f2f2f2;
   --gray-300: #bdbdbd;
+  --gray-600: #828282;
   --gray-700: #4f4f4f;
   --gray-800: #333333;
   --gray-900: #222222;
@@ -11,7 +13,9 @@
   --navbar-bg: var(--gray-700);
 
   --header-height: 2em;
-  --container-max-width: 75ch;
+  --container-horizontal-padding: 2em;
+  --container-vertical-padding: 1.5em;
+  --container-max-width: calc(75ch + 2 * var(--container-horizontal-padding));
 }
 
 * {
@@ -27,7 +31,10 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: clamp(16px, 12px + 0.5vw, 40px);
+}
+
+body {
+  background: var(--gray-200);
 }
 
 .no-focus-outline a:focus,

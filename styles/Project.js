@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Section from './Section';
 
 export const ProjectLinks = styled.div`
@@ -16,6 +16,7 @@ export const Tags = styled(ProjectLinks)`
 
 export const ProjectInfo = styled.div`
   margin-top: 1em;
+  width: 100%;
 
   & > *:not(:first-child) {
     margin-top: 0.5rem;
@@ -49,6 +50,10 @@ const StyledProject = styled(Section)`
 
 export default StyledProject;
 
+const contentWidth = css`
+  calc(var(--container-max-width) - 2 * var(--container-horizontal-padding))
+`;
+
 export const CompactProject = styled(StyledProject)`
   flex-direction: row;
   align-items: center;
@@ -75,10 +80,12 @@ export const CompactProject = styled(StyledProject)`
     justify-content: space-between;
     min-width: min(
       calc(
-        calc(var(--container-max-width) - ${({ imageSize }) => imageSize}) - 6 *
-          ${({ gap }) => gap}
+        (
+          ${contentWidth} -
+            ${({ imageSize, gap }) => `${imageSize} - 2 * ${gap}`}
+        )
       ),
-      calc(100% - 2 * ${({ gap }) => gap})
+      calc(100% - 2 * var(--container-horizontal-padding))
     );
 
     h3 {
