@@ -25,7 +25,7 @@ export const ProjectInfo = styled.div`
   h3 {
     text-align: center;
     font-family: Lato, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     text-transform: uppercase;
   }
 `;
