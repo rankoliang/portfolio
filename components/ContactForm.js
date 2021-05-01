@@ -17,6 +17,20 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const data = { name, email, subject, message, sendReceipt };
+    fetch('/api/contact', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then(console.log)
+      .then(() => {
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      });
   };
 
   return (
