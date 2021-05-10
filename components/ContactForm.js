@@ -13,23 +13,34 @@ const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [sendReceipt, setSendReceipt] = useState(true);
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = { name, email, subject, message, sendReceipt };
+
+    const data = { name, email, subject, message };
+
     fetch('/api/contact', {
       method: 'POST',
       mode: 'no-cors',
       body: JSON.stringify(data),
     })
-      .then((response) => response.text())
-      .then(console.log)
-      .then(() => {
-        setName('');
-        setEmail('');
-        setSubject('');
-        setMessage('');
+      .then((response) => {
+        if (response.ok) {
+          resetForm();
+        }
+
+        return response.text();
+      })
+      .then(alert)
+      .catch((err) => {
+        console.error(err);
       });
   };
 
@@ -75,17 +86,6 @@ const ContactForm = () => {
             onChange={handleChange(setMessage)}
             required
           />
-        </FormControl>
-
-        <FormControl
-          flexDirection="row"
-          onClick={() => {
-            setSendReceipt(!sendReceipt);
-          }}
-          crossAxisCenter
-        >
-          <FormInput type="checkbox" checked={sendReceipt} readOnly />
-          <FormLabel>Send receipt?</FormLabel>
         </FormControl>
 
         <Button color="primary">Submit</Button>

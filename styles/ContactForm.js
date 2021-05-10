@@ -43,6 +43,12 @@ export const FormControl = styled.div`
     `}
 `;
 
+export const MailResponse = styled.p`
+  min-height: 1.4em;
+  font-weight: 400;
+  color: var(--${({ responseOK }) => (responseOK ? 'green' : 'red')});
+`;
+
 FormControl.defaultProps = {
   flexDirection: 'column',
   crossAxisCenter: false,
