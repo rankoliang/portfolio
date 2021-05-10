@@ -36,10 +36,6 @@ body {
   font-weight: 300;
 }
 
-body {
-  background: var(--gray-200);
-}
-
 .no-focus-outline a:focus,
 .no-focus-outline button:focus {
   outline: none;
