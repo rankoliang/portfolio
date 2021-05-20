@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, forwardRef } from 'react';
 import SectionHeader from './SectionHeader';
 import Section from '../styles/Section';
 import Button from './Button';
@@ -8,7 +8,7 @@ const handleChange = (setState) => (event) => {
   setState(event.currentTarget.value);
 };
 
-const ContactForm = () => {
+const ContactForm = (_, ref) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [emailConfirmation, setEmailConfirmation] = useState('');
@@ -59,7 +59,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Section>
+    <Section ref={ref}>
       <SectionHeader>Contact Me</SectionHeader>
       <Form onSubmit={handleSubmit}>
         <FormControl>
@@ -120,4 +120,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default forwardRef(ContactForm);

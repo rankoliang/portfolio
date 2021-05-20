@@ -57,3 +57,11 @@ export const BlurredImage = styled.img`
   filter: blur(2rem);
   transform: scale(1.2);
 `;
+
+export const HeroLinks = styled.div`
+  display: flex;
+
+  & > *:not(:last-child) {
+    margin-right: 0.5em;
+  }
+`;

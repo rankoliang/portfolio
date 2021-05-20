@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Hero from '../components/Hero';
 import getPlaceholder from '../utils/getPlaceholder';
 import Container from '../styles/Container';
@@ -20,6 +20,8 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ hero, projects }) {
+  const contactFormRef = useRef();
+
   useEffect(() => {
     document.documentElement.classList.add('no-focus-outline');
 
@@ -36,11 +38,11 @@ export default function Home({ hero, projects }) {
 
   return (
     <>
-      <Hero hero={hero} />
+      <Hero hero={hero} contactFormRef={contactFormRef} />
       <Container as="main">
         <Projects projects={projects} />
         <About />
-        <ContactForm />
+        <ContactForm ref={contactFormRef} />
       </Container>
     </>
   );

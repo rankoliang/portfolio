@@ -64,10 +64,8 @@ const outlinedStyles = ({ outlined }) => {
     ${({ hoverAnimationDisabled }) =>
       hoverAnimationDisabled ||
       css`
-        button&:focus,
-        button&:hover,
-        a&:focus,
-        a&:hover {
+        &:focus,
+        &:hover {
           svg {
             color: ${fallback(theme.text, secondary)};
           }
@@ -93,8 +91,7 @@ const StyledButton = styled.button`
   transition-duration: 0.4s, 0.4s, 0.1s;
   transition-timing-function: ease-out, ease-out, ease-out;
 
-  a&:hover,
-  button&:hover {
+  &:hover {
     cursor: pointer;
     text-decoration: none;
   }
@@ -115,8 +112,7 @@ const StyledButton = styled.button`
     margin-right: ${({ gap }) => gap};
   }
 
-  button&:active,
-  a&:active {
+  &:active {
     transform: translateY(0.1em);
   }
 

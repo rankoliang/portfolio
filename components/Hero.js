@@ -4,6 +4,7 @@ import {
   StyledBackground,
   StyledOccupation,
   StyledHero,
+  HeroLinks,
   BlurredImage,
   Titles,
   Body,
@@ -11,6 +12,8 @@ import {
 import Name, { Occupation } from './Name';
 import GithubLink from './buttons/GithubLink';
 import ScrollDown from '../components/ScrollDown';
+import Button from './Button';
+import { FiMail } from 'react-icons/fi';
 
 const Background = ({ imgSrc, imgBase64 }) => {
   return (
@@ -28,7 +31,7 @@ const Background = ({ imgSrc, imgBase64 }) => {
   );
 };
 
-const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
+const Hero = ({ hero: { imgSrc, imgBase64 }, contactFormRef }) => {
   const heroRef = useRef(null);
   const scrollRef = useRef(null);
 
@@ -56,7 +59,19 @@ const Hero = ({ hero: { imgSrc, imgBase64 } }) => {
             tablet={{ size: '4.5rem' }}
           />
         </Titles>
-        <GithubLink color="white" outlined />
+        <HeroLinks>
+          <GithubLink color="white" outlined />
+          <Button
+            onClick={() => {
+              contactFormRef.current?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            color="white"
+            outlined
+          >
+            <FiMail />
+            <span>Contact</span>
+          </Button>
+        </HeroLinks>
       </Body>
       <ScrollDown
         onClick={scrollToNext}
