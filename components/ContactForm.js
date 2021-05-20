@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SectionHeader from './SectionHeader';
 import Section from '../styles/Section';
 import Button from './Button';
@@ -11,20 +11,34 @@ const handleChange = (setState) => (event) => {
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailConfirmation, setEmailConfirmation] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const emailRef = useRef();
+  const emailConfirmationRef = useRef();
+
+  useEffect(() => {
+    if (emailConfirmation && email !== emailConfirmation) {
+      [emailRef, emailConfirmationRef].forEach((ref) => {
+        ref.current.setCustomValidity('Your emails do not match');
+      });
+    } else {
+      [emailRef, emailConfirmationRef].forEach((ref) => {
+        ref.current.setCustomValidity('');
+      });
+    }
+  }, [email, emailConfirmation]);
 
   const resetForm = () => {
-    setName('');
-    setEmail('');
     setSubject('');
     setMessage('');
+    emailRef.current.setCustomValidity('');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const data = { name, email, subject, message };
+    const data = { name, email, emailConfirmation, subject, message };
 
     fetch('/api/contact', {
       method: 'POST',
@@ -61,9 +75,21 @@ const ContactForm = () => {
         <FormControl>
           <FormLabel>Email</FormLabel>
           <FormInput
+            ref={emailRef}
             type="email"
             value={email}
             onChange={handleChange(setEmail)}
+            required
+          />
+        </FormControl>
+
+        <FormControl>
+          <FormLabel>Confirm Email</FormLabel>
+          <FormInput
+            ref={emailConfirmationRef}
+            type="email"
+            value={emailConfirmation}
+            onChange={handleChange(setEmailConfirmation)}
             required
           />
         </FormControl>

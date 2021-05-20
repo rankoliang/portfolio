@@ -4,7 +4,15 @@ AWS.config.update({ region: process.env.AWS_REGION });
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { email, subject, message } = JSON.parse(req.body);
+    const { email, emailConfirmation, subject, message } = JSON.parse(req.body);
+
+    if (email !== emailConfirmation) {
+      res
+        .status(400)
+        .send(
+          'Your emails did not match. Please ensure they match and try again.'
+        );
+    }
 
     const params = {
       Destination: {
@@ -41,7 +49,9 @@ export default async function handler(req, res) {
 
         res
           .status(200)
-          .send('Message sent! You should receive an email shortly in your inbox or spam folder.');
+          .send(
+            'Message sent! You should receive an email shortly in your inbox. Please check your spam folder if you have not received it.'
+          );
       })
       .catch((err) => {
         console.error({
@@ -53,12 +63,12 @@ export default async function handler(req, res) {
         });
 
         res
-          .status(400)
+          .status(500)
           .send(
             `There was an unexpected error. You can send me a message at ${process.env.EMAIL}.`
           );
       });
   } else {
-    res.status(400).send('Bad request');
+    res.status(501).send('Not Implemented');
   }
 }

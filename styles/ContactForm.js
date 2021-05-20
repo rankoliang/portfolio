@@ -24,6 +24,11 @@ export const FormInput = styled.input`
     border: 1px solid var(--primary-500);
   }
 
+  &:focus:invalid {
+    outline: 1px solid var(--red);
+    border: 1px solid var(--red);
+  }
+
   &[type='checkbox'] {
     margin-top: 0;
     width: 1em;
