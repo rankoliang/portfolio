@@ -7,6 +7,7 @@ export const StyledHero = styled.div`
   color: white;
   position: relative;
   height: 100%;
+  overflow: hidden;
 `;
 
 export const StyledOccupation = styled.div`

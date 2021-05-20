@@ -5,11 +5,14 @@ const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: var(--container-max-width);
-  background: white;
 
   & > *:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: ${({ gap }) => gap};
   }
 `;
+
+Container.defaultProps = {
+  gap: '1em',
+};
 
 export default Container;

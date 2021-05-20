@@ -96,6 +96,7 @@ const StyledButton = styled.button`
   a&:hover,
   button&:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 
   ${({ margin }) =>

@@ -37,7 +37,7 @@ export default function Home({ hero, projects }) {
   return (
     <>
       <Hero hero={hero} />
-      <Container>
+      <Container as="main">
         <Projects projects={projects} />
         <About />
         <ContactForm />
