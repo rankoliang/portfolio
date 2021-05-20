@@ -4,7 +4,9 @@ AWS.config.update({ region: process.env.AWS_REGION });
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { email, emailConfirmation, subject, message } = JSON.parse(req.body);
+    const { name, email, emailConfirmation, subject, message } = JSON.parse(
+      req.body
+    );
 
     if (email !== emailConfirmation) {
       res
@@ -19,23 +21,13 @@ export default async function handler(req, res) {
         BccAddresses: [process.env.SOURCE_EMAIL],
         ToAddresses: [email],
       },
-      Message: {
-        Body: {
-          Text: {
-            Charset: 'UTF-8',
-            Data: message,
-          },
-        },
-        Subject: {
-          Charset: 'UTF-8',
-          Data: subject,
-        },
-      },
+      Template: 'PersonalSiteContactForm',
+      TemplateData: JSON.stringify({ subject, name, message }),
       Source: process.env.SOURCE_EMAIL,
     };
 
     const sendPromise = new AWS.SES({ apiVersion: '2010-12-01' })
-      .sendEmail(params)
+      .sendTemplatedEmail(params)
       .promise();
 
     sendPromise

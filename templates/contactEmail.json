@@ -1,0 +1,7 @@
+{
+  "Template": {
+    "TemplateName": "PersonalSiteContactForm",
+    "SubjectPart": "{{subject}}",
+    "TextPart": "Hello {{name}},\r\n\r\nHere is a transcript of the message you sent to me.\r\n\r\n----------\r\n{{message}}\r\n----------\r\n\r\nBest,\r\nRanko Liang"
+  }
+}
