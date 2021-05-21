@@ -22,14 +22,13 @@ const Project = ({
       ProjectWrapper = StyledProject;
   }
 
-  // TODO remove suppressHydrationWarning after replacing descriptions
   return (
     <ProjectWrapper>
       <ProjectImage {...imageProps} />
       <ProjectInfo>
         <h3>{title}</h3>
         <ProjectTags tags={tags} />
-        <p suppressHydrationWarning>{description}</p>
+        <p>{description}</p>
         <ProjectLinks>
           {links?.github && <GithubLink href={links.github} target="_blank" />}
           {links?.visit && (
