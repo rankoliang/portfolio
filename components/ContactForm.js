@@ -14,6 +14,7 @@ const ContactForm = (_, ref) => {
   const [emailConfirmation, setEmailConfirmation] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [submitting, setSubmitting] = useState(false);
   const emailRef = useRef();
   const emailConfirmationRef = useRef();
 
@@ -40,6 +41,8 @@ const ContactForm = (_, ref) => {
 
     const data = { name, email, emailConfirmation, subject, message };
 
+    setSubmitting(true);
+
     fetch('/api/contact', {
       method: 'POST',
       mode: 'no-cors',
@@ -55,6 +58,9 @@ const ContactForm = (_, ref) => {
       .then(alert)
       .catch((err) => {
         console.error(err);
+      })
+      .finally(() => {
+        setSubmitting(false);
       });
   };
 
@@ -114,7 +120,9 @@ const ContactForm = (_, ref) => {
           />
         </FormControl>
 
-        <Button color="primary">Submit</Button>
+        <Button color="primary" disabled={submitting}>
+          {submitting ? 'Submitting...' : 'Submit'}
+        </Button>
       </Form>
     </Section>
   );

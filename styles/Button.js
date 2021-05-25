@@ -38,13 +38,12 @@ const outlinedStyles = ({ outlined }) => {
   let secondary;
   let idle;
   let active;
-  let outlinedStyle = css`
-    box-shadow: inset 0 0 0 0.1em ${theme.background};
+  let outlinedStyle = (color = theme.background) => css`
+    box-shadow: inset 0 0 0 0.1em ${color};
   `;
-  let filledStyle = css`
-    box-shadow: inset 0 0 0 2em ${theme.background};
+  let filledStyle = (color = theme.background) => css`
+    box-shadow: inset 0 0 0 2em ${color};
   `;
-
   if (outlined) {
     primary = theme.background;
     secondary = theme.foreground;
@@ -59,18 +58,24 @@ const outlinedStyles = ({ outlined }) => {
 
   return css`
     color: ${fallback(theme.text, primary)};
-    ${idle}
+
+    &:disabled {
+      cursor: wait;
+      ${idle('var(--gray-600)')}
+    }
+
+    ${idle()}
 
     ${({ hoverAnimationDisabled }) =>
       hoverAnimationDisabled ||
       css`
-        &:focus,
-        &:hover {
+        &:focus:not([disabled]),
+        &:hover:not([disabled]) {
           svg {
             color: ${fallback(theme.text, secondary)};
           }
 
-          ${active}
+          ${active()}
           color: ${secondary};
         }
       `}
