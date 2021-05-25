@@ -1,6 +1,10 @@
 import AWS from 'aws-sdk';
 
-AWS.config.update({ region: process.env.AWS_REGION });
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_PORTFOLIO,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_PORTFOLIO,
+  region: process.env.AWS_REGION_PORTFOLIO,
+});
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
