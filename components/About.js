@@ -6,22 +6,14 @@ const About = () => {
     <Section>
       <SectionHeader>About</SectionHeader>
       <p>
-        Ipsum vero placeat ipsum debitis autem. Eum vitae voluptatem quidem
-        deleniti placeat aut, eligendi? Dolore blanditiis sint veniam atque
-        porro.
+        I&apos;m a full stack engineer with experience in working with React and
+        Ruby on Rails. I love building highly interactive applications and
+        bringing ideas to life. I also enjoy investing my time into learning to
+        constantly improve on the projects I create.
       </p>
       <p>
-        Sit eos sunt delectus libero non aperiam quidem et. Exercitationem ut
-        rem sequi sint aut? Suscipit a error optio reiciendis
-      </p>
-      <p>
-        Dolor omnis a doloribus consequatur saepe Et impedit similique
-        voluptatum quos exercitationem. Quas molestiae culpa ullam quo pariatur
-        quod Dolorum
-      </p>
-      <p>
-        Ipsum veritatis aspernatur cumque deleniti est Quia sapiente possimus
-        minima minima minima Dolore eos amet dignissimos vitae nisi Facilis quo.
+        Have questions or opportunities? Get in touch with me using the contact
+        form below.
       </p>
     </Section>
   );
