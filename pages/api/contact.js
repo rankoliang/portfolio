@@ -1,4 +1,7 @@
 import AWS from 'aws-sdk';
+import pino from 'pino';
+
+const logger = pino();
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID_PORTFOLIO,
@@ -36,7 +39,7 @@ export default async function handler(req, res) {
 
     sendPromise
       .then((data) => {
-        console.log({
+        logger.info({
           date: new Date().toISOString(),
           req: { body: JSON.parse(req.body) },
           status: 'success',
@@ -50,7 +53,7 @@ export default async function handler(req, res) {
           );
       })
       .catch((err) => {
-        console.error({
+        logger.error({
           date: new Date().toISOString(),
           req: { body: JSON.parse(req.body) },
           status: 'error',
