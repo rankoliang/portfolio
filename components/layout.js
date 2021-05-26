@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID);
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <>
       <Head>
