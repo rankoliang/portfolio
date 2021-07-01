@@ -11,9 +11,8 @@ AWS.config.update({
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, emailConfirmation, subject, message } = JSON.parse(
-      req.body
-    );
+    const { name, email, emailConfirmation, subject, message, recaptchaToken } =
+      JSON.parse(req.body);
 
     if (email !== emailConfirmation) {
       res
@@ -32,6 +31,15 @@ export default async function handler(req, res) {
       TemplateData: JSON.stringify({ subject, name, message }),
       Source: process.env.SOURCE_EMAIL,
     };
+
+    const captchaResponse = await validateHuman(recaptchaToken);
+
+    const { success: isHuman } = captchaResponse;
+
+    if (!isHuman) {
+      logger.error({ type: 'captcha response', captchaResponse });
+      res.status(500).send('Captcha validation failed. Please try again');
+    }
 
     const sendPromise = new AWS.SES({ apiVersion: '2010-12-01' })
       .sendTemplatedEmail(params)
@@ -71,3 +79,18 @@ export default async function handler(req, res) {
     res.status(501).send('Not Implemented');
   }
 }
+
+const validateHuman = async (recaptchaToken) => {
+  const response = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?` +
+      new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY,
+        response: recaptchaToken,
+      }),
+    { method: 'POST' }
+  );
+
+  const data = await response.json();
+
+  return data;
+};

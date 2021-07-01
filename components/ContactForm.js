@@ -3,6 +3,7 @@ import SectionHeader from './SectionHeader';
 import Section from '../styles/Section';
 import Button from './Button';
 import Form, { FormLabel, FormInput, FormControl } from '../styles/ContactForm';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const handleChange = (setState) => (event) => {
   setState(event.currentTarget.value);
@@ -17,6 +18,7 @@ const ContactForm = (_, ref) => {
   const [submitting, setSubmitting] = useState(false);
   const emailRef = useRef();
   const emailConfirmationRef = useRef();
+  const recaptchaRef = useRef();
 
   useEffect(() => {
     if (emailConfirmation && email !== emailConfirmation) {
@@ -36,10 +38,23 @@ const ContactForm = (_, ref) => {
     emailRef.current.setCustomValidity('');
   };
 
-  const handleSubmit = (event) => {
+  const validate = (event) => {
     event.preventDefault();
 
-    const data = { name, email, emailConfirmation, subject, message };
+    recaptchaRef.current.execute();
+  };
+
+  const handleSubmit = () => {
+    const recaptchaToken = recaptchaRef.current.getValue();
+
+    const data = {
+      name,
+      email,
+      emailConfirmation,
+      subject,
+      message,
+      recaptchaToken,
+    };
 
     setSubmitting(true);
 
@@ -61,13 +76,14 @@ const ContactForm = (_, ref) => {
       })
       .finally(() => {
         setSubmitting(false);
+        recaptchaRef.current.reset();
       });
   };
 
   return (
     <Section ref={ref}>
       <SectionHeader>Contact Me</SectionHeader>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={validate}>
         <FormControl>
           <FormLabel>Name</FormLabel>
           <FormInput
@@ -119,6 +135,14 @@ const ContactForm = (_, ref) => {
             required
           />
         </FormControl>
+
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size="invisible"
+          badge="inline"
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT_KEY}
+          onChange={handleSubmit}
+        />
 
         <Button color="primary" disabled={submitting}>
           {submitting ? 'Submitting...' : 'Submit'}
