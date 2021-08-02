@@ -18,8 +18,6 @@ const StyledScrollDown = styled.button`
   margin: 0 auto;
   position: absolute;
   bottom: 1rem;
-  left: 0;
-  right: 0;
   -webkit-tap-highlight-color: transparent;
 
   & .wrapper {
